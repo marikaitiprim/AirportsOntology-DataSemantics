@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/"
+     xml:base="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#connects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#connects">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasControlTower -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasControlTower">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#ControlTower"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasRunway -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasRunway">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Runway"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasTerminal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasTerminal">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#isLocatedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#isPartOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Terminal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#operatesAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#operatesAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airline"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#servesCity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#servesCity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasArrivalTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasArrivalTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasCapacity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Terminal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasCoordinates -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasCoordinates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasFlightNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasFlightNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasGate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasGate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasIATACode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasIATACode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasICAOCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasICAOCode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasRunwayLen -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasRunwayLen">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Runway"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasTerminal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasTerminal">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airline -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airline"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#ControlTower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#ControlTower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Country"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Facility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Facility"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#InternationalAirport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#InternationalAirport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#InternationalFlight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#InternationalFlight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#LocalAirport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#LocalAirport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#LocalFlight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#LocalFlight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#MilitaryAirport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#MilitaryAirport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#PrivateAirport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#PrivateAirport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Runway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Runway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Terminal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Terminal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Facility"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
