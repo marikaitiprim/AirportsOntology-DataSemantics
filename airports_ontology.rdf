@@ -21,11 +21,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#connects -->
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasArrivalAirport -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#connects">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasArrivalAirport">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
     </owl:ObjectProperty>
     
@@ -36,6 +36,16 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasControlTower">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#ControlTower"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureAirport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureAirport">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
     </owl:ObjectProperty>
     
 
@@ -63,6 +73,7 @@
     <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#isLocatedIn -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#isLocatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Country"/>
     </owl:ObjectProperty>
@@ -74,6 +85,15 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#isPartOf">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Terminal"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#operatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#operatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airline"/>
     </owl:ObjectProperty>
     
 
