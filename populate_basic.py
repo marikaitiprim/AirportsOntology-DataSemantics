@@ -1,4 +1,4 @@
-from rdflib import Graph, Namespace, Literal, URIRef
+from rdflib import Graph, Namespace, Literal, URIRef, XSD
 from rdflib.namespace import RDF, RDFS, OWL
 from SPARQLWrapper import SPARQLWrapper, JSON
 import re
@@ -110,15 +110,15 @@ def populate_ontology(g, airport_data):
         
         if 'iata' in airport:   # Add IATA code
             iata_code = airport['iata']['value']
-            g.add((airport_entity, AIRPORT.hasIATACode, Literal(iata_code)))
+            g.add((airport_entity, AIRPORT.hasIATACode, Literal(iata_code, datatype=XSD.string)))
         
         if 'icao' in airport:  # Add ICAO code 
             icao_code = airport['icao']['value']
-            g.add((airport_entity, AIRPORT.hasICAOCode, Literal(icao_code)))
+            g.add((airport_entity, AIRPORT.hasICAOCode, Literal(icao_code, datatype=XSD.string)))
         
         if 'coord' in airport: # Add coordinates 
             coord_value = airport['coord']['value']
-            g.add((airport_entity, AIRPORT.hasCoordinates, Literal(coord_value)))
+            g.add((airport_entity, AIRPORT.hasCoordinates, Literal(coord_value, datatype=XSD.string)))
         
         if 'runway' in airport: # Process runway information
             runway_uri = airport['runway']['value']
@@ -139,7 +139,7 @@ def populate_ontology(g, airport_data):
                 
                 if 'runwayLength' in airport:  # Add runway length
                     runway_length = airport['runwayLength']['value']
-                    g.add((runway_entity, AIRPORT.hasRunwayLen, Literal(runway_length)))
+                    g.add((runway_entity, AIRPORT.hasRunwayLen, Literal(runway_length, datatype=XSD.string)))
             
             runway_entity = runway_map[runway_id]    # Link airport to runway
             g.add((airport_entity, AIRPORT.hasRunway, runway_entity))
