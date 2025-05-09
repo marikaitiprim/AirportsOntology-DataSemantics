@@ -2,7 +2,6 @@ import csv
 from rdflib import Graph, Namespace, Literal, URIRef, XSD
 from rdflib.namespace import RDF, RDFS
 import re
-from datetime import datetime, timedelta
 
 # Helper to convert time values
 def format_time(time_value):
@@ -89,14 +88,9 @@ with open("flights.csv") as f:
                 duration_minutes = int(float(air_time))
                 # Store duration in minutes
                 g.add((flight_uri, AIRPORT.hasDuration, Literal(duration_minutes, datatype=XSD.integer)))
-               
             
-            # if distance and distance.strip():
-            #    g.add((flight_uri, AIRPORT.hasDistance, Literal(float(distance), datatype=XSD.decimal)))
-               
-                    
-            # Add flight date
-            # g.add((flight_uri, AIRPORT.hasFlightDate, Literal(date_str, datatype=XSD.date)))
+            if distance and distance.strip():
+               g.add((flight_uri, AIRPORT.hasDistance, Literal(distance, datatype=XSD.integer)))
             
 
 print(f"Ontology now has {len(g)} triples")
