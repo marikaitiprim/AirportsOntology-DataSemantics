@@ -9,7 +9,7 @@ hasArrivalAirport(?f, ?a2) ^
 isLocatedIn(?a1, ?c1) ^ isLocatedIn(?a2, ?c2) ^
 hasName(?c1, ?n1) ^ hasName(?c2, ?n2) ^
 swrlb:notEqual(?n1, ?n2)
-→ InternationalAirport(?a1) ^ InternationalAirport(?a2)
+-> InternationalAirport(?a1) ^ InternationalAirport(?a2)
 
 ## 2. Infer Domestic Flights
 # If a flight's departure and destination airports are in the same country, it's a domestic flight
@@ -20,17 +20,8 @@ isLocatedIn(?a1, ?c) ^
 isLocatedIn(?a2, ?c) 
 -> DomesticFlight(?f)
 
-## 4. Classify Flights as Direct Flights
-# All flights that aren't explicitly classified as connecting flights are direct flights
-Flight(?f) ^ 
-hasDepartureAirport(?f, ?a1) ^ 
-hasArrivalAirport(?f, ?a2) ^ 
-hasIATACode(?a1, ?iata1) ^ hasIATACode(?a2, ?iata2) ^
-swrlb:notEqual(?iata1, ?iata2)
-→ DirectFlight(?f)
 
-
-## 5. Infer Hub Connections for Airlines
+## 3. Infer Hub Connections for Airlines
 # If an airline operates more than 3 flights from an airport, that airport is a hub for the airline
 # Note: This requires aggregation which is not directly supported in SWRL
 # Placeholder rule structure:
@@ -40,42 +31,32 @@ operatedBy(?f1, ?al) ^ operatedBy(?f2, ?al) ^ operatedBy(?f3, ?al) ^
 hasDepartureAirport(?f1, ?a) ^ hasDepartureAirport(?f2, ?a) ^ hasDepartureAirport(?f3, ?a) ^
 hasFlightNumber(?f1, ?fid1) ^ hasFlightNumber(?f2, ?fid2) ^ hasFlightNumber(?f3, ?fid3) ^
 swrlb:notEqual(?fid1, ?fid2) ^ swrlb:notEqual(?fid1, ?fid3) ^ swrlb:notEqual(?fid2, ?fid3)
-→ hasHub(?al, ?a)
+-> hasHub(?al, ?a)
 
-## 6. Infer Transitivity of Connections
-# If city A has a direct flight to city B, and B has a direct flight to C, then A is connected to C
-# (with at most one stop)
-hasDirectFlight(?c1, ?c2) ^ 
-hasDirectFlight(?c2, ?c3) ^ 
-rdfs:label(?c1, ?n1) ^ rdfs:label(?c3, ?n3) ^
-swrlb:notEqual(?n1, ?n3)
-→ hasConnection(?c1, ?c3)
-
-## 7. Classify Major Airports Based on Runway Length
+## 4. Classify Major Airports Based on Runway Length
 # If an airport has at least one runway longer than 3000 meters, classify it as a MajorAirport
 Airport(?a) ^ 
 hasRunway(?a, ?r) ^ 
 hasRunwayLen(?r, ?len) ^ 
-swrlb:greaterThan(?len, 3000) 
-→ MajorAirport(?a)
+swrlb:greaterThan(?len, 2000) 
+-> MajorAirport(?a)
 
-## 8. Identify Long-Haul Flights
+## 5. Identify Long-Haul Flights
 # If a flight's duration is over 6 hours (360 minutes), classify it as a LongFlight
 Flight(?f) ^ 
 hasDuration(?f, ?dur) ^ 
 swrlb:greaterThan(?dur, 360) 
 -> LongFlight(?f)
 
-## 9. Identify Hub Airports Based on Flight Count
-# If an airport has more than 5 departing flights, classify it as a HubAirport
+## 6. Identify Hub Airports Based on Flight Count
+# If an airport has more than 4 departing flights, classify it as a HubAirport
 Airport(?a) ^ 
-Flight(?f1) ^ Flight(?f2) ^ Flight(?f3) ^ Flight(?f4) ^ Flight(?f5) ^
+Flight(?f1) ^ Flight(?f2) ^ Flight(?f3) ^ Flight(?f4) ^
 hasDepartureAirport(?f1, ?a) ^ hasDepartureAirport(?f2, ?a) ^ hasDepartureAirport(?f3, ?a) ^
-hasDepartureAirport(?f4, ?a) ^ hasDepartureAirport(?f5, ?a) ^
+hasDepartureAirport(?f4, ?a) ^
 hasFlightNumber(?f1, ?id1) ^ hasFlightNumber(?f2, ?id2) ^ hasFlightNumber(?f3, ?id3) ^
-hasFlightNumber(?f4, ?id4) ^ hasFlightNumber(?f5, ?id5) ^
-swrlb:notEqual(?id1, ?id2) ^ swrlb:notEqual(?id1, ?id3) ^ swrlb:notEqual(?id1, ?id4) ^ swrlb:notEqual(?id1, ?id5) ^
-swrlb:notEqual(?id2, ?id3) ^ swrlb:notEqual(?id2, ?id4) ^ swrlb:notEqual(?id2, ?id5) ^
-swrlb:notEqual(?id3, ?id4) ^ swrlb:notEqual(?id3, ?id5) ^
-swrlb:notEqual(?id4, ?id5)
-→ HubAirport(?a)
+hasFlightNumber(?f4, ?id4) ^
+swrlb:notEqual(?id1, ?id2) ^ swrlb:notEqual(?id1, ?id3) ^ swrlb:notEqual(?id1, ?id4) ^
+swrlb:notEqual(?id2, ?id3) ^ swrlb:notEqual(?id2, ?id4) ^
+swrlb:notEqual(?id3, ?id4) ^
+-> HubAirport(?a)

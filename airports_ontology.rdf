@@ -224,8 +224,6 @@
     <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasName -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasName">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airline"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Country"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -236,7 +234,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasRunwayLen">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Runway"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
@@ -275,14 +273,6 @@
     <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Country -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Country"/>
-    
-
-
-    <!-- http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#DirectFlight -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#DirectFlight">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
-    </owl:Class>
     
 
 
@@ -378,27 +368,6 @@
     <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/fid3">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f4">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f5">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id1">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id2">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id3">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id4">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id5">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/r">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -427,12 +396,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/c">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/iata1">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/iata2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/dur">
@@ -732,7 +695,7 @@
                                                         <rdf:rest>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</rdf:first>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</rdf:first>
                                                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                                             </rdf:Description>
                                                         </rdf:rest>
@@ -1011,105 +974,6 @@
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment></rdfs:comment>
-        <rdfs:label>Direct Flights</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureAirport"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f"/>
-                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasArrivalAirport"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f"/>
-                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a2"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasIATACode"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a1"/>
-                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/iata1"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasIATACode"/>
-                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a2"/>
-                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/iata2"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                <swrl:arguments rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/iata1"/>
-                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/iata2"/>
-                                                                </swrl:arguments>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#DirectFlight"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment></rdfs:comment>
         <rdfs:label>Long Flights</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
@@ -1170,378 +1034,6 @@
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#LongFlight"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment></rdfs:comment>
-        <rdfs:label>Airport Hub</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Airport"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f2"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f3"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
-                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f4"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#Flight"/>
-                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f5"/>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                <rdf:first>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureAirport"/>
-                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f1"/>
-                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a"/>
-                                                                    </rdf:Description>
-                                                                </rdf:first>
-                                                                <rdf:rest>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                        <rdf:first>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureAirport"/>
-                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f2"/>
-                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a"/>
-                                                                            </rdf:Description>
-                                                                        </rdf:first>
-                                                                        <rdf:rest>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                <rdf:first>
-                                                                                    <rdf:Description>
-                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureAirport"/>
-                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f3"/>
-                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a"/>
-                                                                                    </rdf:Description>
-                                                                                </rdf:first>
-                                                                                <rdf:rest>
-                                                                                    <rdf:Description>
-                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                        <rdf:first>
-                                                                                            <rdf:Description>
-                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureAirport"/>
-                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f4"/>
-                                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a"/>
-                                                                                            </rdf:Description>
-                                                                                        </rdf:first>
-                                                                                        <rdf:rest>
-                                                                                            <rdf:Description>
-                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                <rdf:first>
-                                                                                                    <rdf:Description>
-                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasDepartureAirport"/>
-                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f5"/>
-                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a"/>
-                                                                                                    </rdf:Description>
-                                                                                                </rdf:first>
-                                                                                                <rdf:rest>
-                                                                                                    <rdf:Description>
-                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                        <rdf:first>
-                                                                                                            <rdf:Description>
-                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasFlightNumber"/>
-                                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f1"/>
-                                                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id1"/>
-                                                                                                            </rdf:Description>
-                                                                                                        </rdf:first>
-                                                                                                        <rdf:rest>
-                                                                                                            <rdf:Description>
-                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                <rdf:first>
-                                                                                                                    <rdf:Description>
-                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasFlightNumber"/>
-                                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f2"/>
-                                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id2"/>
-                                                                                                                    </rdf:Description>
-                                                                                                                </rdf:first>
-                                                                                                                <rdf:rest>
-                                                                                                                    <rdf:Description>
-                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                        <rdf:first>
-                                                                                                                            <rdf:Description>
-                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasFlightNumber"/>
-                                                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f3"/>
-                                                                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id3"/>
-                                                                                                                            </rdf:Description>
-                                                                                                                        </rdf:first>
-                                                                                                                        <rdf:rest>
-                                                                                                                            <rdf:Description>
-                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                <rdf:first>
-                                                                                                                                    <rdf:Description>
-                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasFlightNumber"/>
-                                                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f4"/>
-                                                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id4"/>
-                                                                                                                                    </rdf:Description>
-                                                                                                                                </rdf:first>
-                                                                                                                                <rdf:rest>
-                                                                                                                                    <rdf:Description>
-                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                        <rdf:first>
-                                                                                                                                            <rdf:Description>
-                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                                                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#hasFlightNumber"/>
-                                                                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/f5"/>
-                                                                                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id5"/>
-                                                                                                                                            </rdf:Description>
-                                                                                                                                        </rdf:first>
-                                                                                                                                        <rdf:rest>
-                                                                                                                                            <rdf:Description>
-                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                <rdf:first>
-                                                                                                                                                    <rdf:Description>
-                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                        <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id1"/>
-                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id2"/>
-                                                                                                                                                        </swrl:arguments>
-                                                                                                                                                    </rdf:Description>
-                                                                                                                                                </rdf:first>
-                                                                                                                                                <rdf:rest>
-                                                                                                                                                    <rdf:Description>
-                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                        <rdf:first>
-                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id1"/>
-                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id3"/>
-                                                                                                                                                                </swrl:arguments>
-                                                                                                                                                            </rdf:Description>
-                                                                                                                                                        </rdf:first>
-                                                                                                                                                        <rdf:rest>
-                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                                <rdf:first>
-                                                                                                                                                                    <rdf:Description>
-                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                        <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id1"/>
-                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id4"/>
-                                                                                                                                                                        </swrl:arguments>
-                                                                                                                                                                    </rdf:Description>
-                                                                                                                                                                </rdf:first>
-                                                                                                                                                                <rdf:rest>
-                                                                                                                                                                    <rdf:Description>
-                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                                        <rdf:first>
-                                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                                <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id1"/>
-                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id5"/>
-                                                                                                                                                                                </swrl:arguments>
-                                                                                                                                                                            </rdf:Description>
-                                                                                                                                                                        </rdf:first>
-                                                                                                                                                                        <rdf:rest>
-                                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                                                <rdf:first>
-                                                                                                                                                                                    <rdf:Description>
-                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                                        <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id2"/>
-                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id3"/>
-                                                                                                                                                                                        </swrl:arguments>
-                                                                                                                                                                                    </rdf:Description>
-                                                                                                                                                                                </rdf:first>
-                                                                                                                                                                                <rdf:rest>
-                                                                                                                                                                                    <rdf:Description>
-                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                                                        <rdf:first>
-                                                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                                                <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id2"/>
-                                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id4"/>
-                                                                                                                                                                                                </swrl:arguments>
-                                                                                                                                                                                            </rdf:Description>
-                                                                                                                                                                                        </rdf:first>
-                                                                                                                                                                                        <rdf:rest>
-                                                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                                                                <rdf:first>
-                                                                                                                                                                                                    <rdf:Description>
-                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                                                        <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id2"/>
-                                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id5"/>
-                                                                                                                                                                                                        </swrl:arguments>
-                                                                                                                                                                                                    </rdf:Description>
-                                                                                                                                                                                                </rdf:first>
-                                                                                                                                                                                                <rdf:rest>
-                                                                                                                                                                                                    <rdf:Description>
-                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                                                                        <rdf:first>
-                                                                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                                                                <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id3"/>
-                                                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id4"/>
-                                                                                                                                                                                                                </swrl:arguments>
-                                                                                                                                                                                                            </rdf:Description>
-                                                                                                                                                                                                        </rdf:first>
-                                                                                                                                                                                                        <rdf:rest>
-                                                                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                                                                                <rdf:first>
-                                                                                                                                                                                                                    <rdf:Description>
-                                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                                                                        <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id3"/>
-                                                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id5"/>
-                                                                                                                                                                                                                        </swrl:arguments>
-                                                                                                                                                                                                                    </rdf:Description>
-                                                                                                                                                                                                                </rdf:first>
-                                                                                                                                                                                                                <rdf:rest>
-                                                                                                                                                                                                                    <rdf:Description>
-                                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                                                                                                                                        <rdf:first>
-                                                                                                                                                                                                                            <rdf:Description>
-                                                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                                                                                                                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
-                                                                                                                                                                                                                                <swrl:arguments rdf:parseType="Collection">
-                                                                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id4"/>
-                                                                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/id5"/>
-                                                                                                                                                                                                                                </swrl:arguments>
-                                                                                                                                                                                                                            </rdf:Description>
-                                                                                                                                                                                                                        </rdf:first>
-                                                                                                                                                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                                                                                                                                                                                    </rdf:Description>
-                                                                                                                                                                                                                </rdf:rest>
-                                                                                                                                                                                                            </rdf:Description>
-                                                                                                                                                                                                        </rdf:rest>
-                                                                                                                                                                                                    </rdf:Description>
-                                                                                                                                                                                                </rdf:rest>
-                                                                                                                                                                                            </rdf:Description>
-                                                                                                                                                                                        </rdf:rest>
-                                                                                                                                                                                    </rdf:Description>
-                                                                                                                                                                                </rdf:rest>
-                                                                                                                                                                            </rdf:Description>
-                                                                                                                                                                        </rdf:rest>
-                                                                                                                                                                    </rdf:Description>
-                                                                                                                                                                </rdf:rest>
-                                                                                                                                                            </rdf:Description>
-                                                                                                                                                        </rdf:rest>
-                                                                                                                                                    </rdf:Description>
-                                                                                                                                                </rdf:rest>
-                                                                                                                                            </rdf:Description>
-                                                                                                                                        </rdf:rest>
-                                                                                                                                    </rdf:Description>
-                                                                                                                                </rdf:rest>
-                                                                                                                            </rdf:Description>
-                                                                                                                        </rdf:rest>
-                                                                                                                    </rdf:Description>
-                                                                                                                </rdf:rest>
-                                                                                                            </rdf:Description>
-                                                                                                        </rdf:rest>
-                                                                                                    </rdf:Description>
-                                                                                                </rdf:rest>
-                                                                                            </rdf:Description>
-                                                                                        </rdf:rest>
-                                                                                    </rdf:Description>
-                                                                                </rdf:rest>
-                                                                            </rdf:Description>
-                                                                        </rdf:rest>
-                                                                    </rdf:Description>
-                                                                </rdf:rest>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#HubAirport"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports/a"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>

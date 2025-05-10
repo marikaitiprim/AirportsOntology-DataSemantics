@@ -35,6 +35,11 @@ def populate_ontology(g):
                 counter += 1
                 continue  
 
+            if counter == 1000: # Limit to 1000 rows 
+                break
+            
+            counter += 1
+
             src_iata = row[13]
             dst_iata = row[14]
             airline = row[20]

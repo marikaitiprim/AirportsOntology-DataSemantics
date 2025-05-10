@@ -36,7 +36,7 @@ def query_airport():
                 ?runway rdfs:label ?runwayLabel .
             }
         }
-    LIMIT 2000
+    LIMIT 600
     """
     
     sparql.setQuery(query)
@@ -139,7 +139,7 @@ def populate_ontology(g, airport_data):
                 
                 if 'runwayLength' in airport:  # Add runway length
                     runway_length = airport['runwayLength']['value']
-                    g.add((runway_entity, AIRPORT.hasRunwayLen, Literal(runway_length, datatype=XSD.string)))
+                    g.add((runway_entity, AIRPORT.hasRunwayLen, Literal(runway_length, datatype=XSD.decimal)))
             
             runway_entity = runway_map[runway_id]    # Link airport to runway
             g.add((airport_entity, AIRPORT.hasRunway, runway_entity))
