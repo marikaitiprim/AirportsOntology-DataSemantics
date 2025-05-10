@@ -1,15 +1,14 @@
 from rdflib import Graph, Namespace
 from tabulate import tabulate
 
-# Define namespaces
 AIRPORT = Namespace("http://www.semanticweb.org/marikaitiprimenta/ontologies/2025/4/airports#")
 
-def format_results(results):
-    """Format the query results for display"""
+def formatted_results(results):
+    """Format the query results for better readability"""
+
     if not results or len(results) == 0:
         return "No results found."
     
-    # Get column names from the results
     headers = results.vars
     
     # Convert results to a list of lists for tabulate
@@ -21,25 +20,22 @@ def format_results(results):
             if val is None:
                 row_values.append("")
             else:
-                # Clean up URIs to display only the relevant part
                 val_str = str(val)
                 if val_str.startswith('http://'):
-                    # Extract the fragment identifier or the last part of the URI
-                    if '#' in val_str:
+                    if '#' in val_str:   # Extract the fragment identifier or the last part of the URI
                         val_str = val_str.split('#')[-1]
                     else:
                         val_str = val_str.split('/')[-1]
                 row_values.append(val_str)
         rows.append(row_values)
     
-    # Return formatted table
     return tabulate(rows, headers=[str(h) for h in headers], tablefmt="grid")
 
-def predefined_queries():
+def defined_queries():
     """Dictionary of predefined queries"""
     return {
         "1": {
-            "name": "List all airports",
+            "name": "List 30 airports",
             "query": """
                 SELECT ?airport ?label ?iata ?icao
                 WHERE {
@@ -49,11 +45,11 @@ def predefined_queries():
                     OPTIONAL { ?airport airport:hasICAOCode ?icao }
                 }
                 ORDER BY ?label
-                LIMIT 20
+                LIMIT 30
             """
         },
         "2": {
-            "name": "Airports by country",
+            "name": "List airports by country",
             "query": """
                 SELECT ?airport ?airportLabel ?country ?countryLabel
                 WHERE {
@@ -63,21 +59,21 @@ def predefined_queries():
                     ?country rdfs:label ?countryLabel .
                 }
                 ORDER BY ?countryLabel ?airportLabel
-                LIMIT 20
+                LIMIT 30
             """
         },
         "3": {
-            "name": "Airports with IATA code starting with 'L'",
+            "name": "List airports with IATA code starting with 'A'",
             "query": """
                 SELECT ?airport ?label ?iata
                 WHERE {
                     ?airport rdf:type airport:Airport .
                     ?airport rdfs:label ?label .
                     ?airport airport:hasIATACode ?iata .
-                    FILTER(STRSTARTS(?iata, "L"))
+                    FILTER(STRSTARTS(?iata, "A"))
                 }
                 ORDER BY ?iata
-                LIMIT 20
+                LIMIT 30
             """
         },
         "4": {
@@ -91,32 +87,34 @@ def predefined_queries():
                 }
                 GROUP BY ?countryLabel
                 ORDER BY DESC(?airportCount)
-                LIMIT 10
+                LIMIT 30
             """
         }
     }
 
-def queries_execution(g):
-    """Select queries to execute"""
-    queries = predefined_queries()
+def queries_exec(g):
+    """Select queries to execute - interactive user interface"""
+    queries = defined_queries()
     
     while True:
+        print("Select a query to execute:")
         for key, query in queries.items():
             print(f"{key}. {query['name']}")
         
         query_choice = input("\nSelect a query (1-4): ").strip()
+
         if query_choice in queries:
             query = queries[query_choice]["query"]
             print(f"\nExecuting query: {queries[query_choice]['name']}")
             results = g.query(query)
             if results:
-                print("\n" + format_results(results))
+                print("\n" + formatted_results(results))
         else:
             print("Invalid query selection.")
 
 if __name__ == "__main__":
     
-    ontology_file = "populated_airports.owl"
+    ontology_file = "populated_airports.owl" #populated ontology for airports (from file populate_basic.py)
 
     g = Graph()
     g.parse(ontology_file, format="xml")
@@ -126,6 +124,4 @@ if __name__ == "__main__":
     g.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
     g.bind("owl", "http://www.w3.org/2002/07/owl#")
     
-    print(f"Loaded ontology with {len(g)} triples")
-    
-    queries_execution(g)
+    queries_exec(g)
