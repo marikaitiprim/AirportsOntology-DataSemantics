@@ -36,7 +36,7 @@ def query_airport():
                 ?runway rdfs:label ?runwayLabel .
             }
         }
-    LIMIT 600
+    LIMIT 800
     """
     
     sparql.setQuery(query)
@@ -70,6 +70,7 @@ def populate_ontology(g, airport_data):
                 g.add((country_entity, RDF.type, AIRPORT.Country))  # Add to ontology
                 g.add((country_entity, RDFS.label, Literal(country_label, lang="en")))
                 g.add((country_entity, OWL.sameAs, URIRef(country_uri)))
+                g.add((country_entity, AIRPORT.hasName, Literal(country_label, datatype=XSD.string)))
                 
     for airport in airport_data:
     

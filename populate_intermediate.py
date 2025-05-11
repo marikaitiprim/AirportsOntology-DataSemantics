@@ -35,7 +35,7 @@ def populate_ontology(g):
                 counter += 1
                 continue  
 
-            if counter == 1000: # Limit to 1000 rows 
+            if counter == 500: # Limit to 500 rows 
                 break
             
             counter += 1
@@ -70,6 +70,9 @@ def populate_ontology(g):
                     airlines_map[airline] = airline_uri
 
                 g.add((flight_uri, AIRPORT.operatedBy, airlines_map[airline]))
+
+                if flight_number:
+                    g.add((flight_uri, AIRPORT.hasFlightNumber, Literal(flight_number, datatype=XSD.integer)))
 
                 if depart_time:
                     g.add((flight_uri, AIRPORT.hasDepartureTime, Literal(depart_time, datatype=XSD.string)))

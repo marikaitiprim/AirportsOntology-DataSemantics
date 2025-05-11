@@ -20,35 +20,22 @@ isLocatedIn(?a1, ?c) ^
 isLocatedIn(?a2, ?c) 
 -> DomesticFlight(?f)
 
-
-## 3. Infer Hub Connections for Airlines
-# If an airline operates more than 3 flights from an airport, that airport is a hub for the airline
-# Note: This requires aggregation which is not directly supported in SWRL
-# Placeholder rule structure:
-Airline(?al) ^ Airport(?a) ^
-Flight(?f1) ^ Flight(?f2) ^ Flight(?f3) ^
-operatedBy(?f1, ?al) ^ operatedBy(?f2, ?al) ^ operatedBy(?f3, ?al) ^
-hasDepartureAirport(?f1, ?a) ^ hasDepartureAirport(?f2, ?a) ^ hasDepartureAirport(?f3, ?a) ^
-hasFlightNumber(?f1, ?fid1) ^ hasFlightNumber(?f2, ?fid2) ^ hasFlightNumber(?f3, ?fid3) ^
-swrlb:notEqual(?fid1, ?fid2) ^ swrlb:notEqual(?fid1, ?fid3) ^ swrlb:notEqual(?fid2, ?fid3)
--> hasHub(?al, ?a)
-
-## 4. Classify Major Airports Based on Runway Length
+## 3. Classify Major Airports Based on Runway Length
 # If an airport has at least one runway longer than 3000 meters, classify it as a MajorAirport
 Airport(?a) ^ 
 hasRunway(?a, ?r) ^ 
 hasRunwayLen(?r, ?len) ^ 
-swrlb:greaterThan(?len, 2000) 
+swrlb:greaterThan(?len, 3000) 
 -> MajorAirport(?a)
 
-## 5. Identify Long-Haul Flights
+## 4. Identify Long-Haul Flights
 # If a flight's duration is over 6 hours (360 minutes), classify it as a LongFlight
 Flight(?f) ^ 
 hasDuration(?f, ?dur) ^ 
 swrlb:greaterThan(?dur, 360) 
 -> LongFlight(?f)
 
-## 6. Identify Hub Airports Based on Flight Count
+## 5. Identify Hub Airports Based on Flight Count
 # If an airport has more than 4 departing flights, classify it as a HubAirport
 Airport(?a) ^ 
 Flight(?f1) ^ Flight(?f2) ^ Flight(?f3) ^ Flight(?f4) ^
